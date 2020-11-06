@@ -27,6 +27,7 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.4",
           "Swashbuckle.AspNetCore": "5.6.3",
           "Syncfusion.DocIO.Net.Core": "18.3.0.47",
+          "sautinsoft.document": "5.0.10.23",
           "sautinsoft.rtftohtml": "7.4.5.25",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
@@ -766,6 +767,23 @@
         },
         "compile": {
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
+        }
+      },
+      "sautinsoft.document/5.0.10.23": {
+        "dependencies": {
+          "System.Drawing.Common": "4.6.0",
+          "System.IO.Packaging": "4.4.0",
+          "System.Text.Encoding.CodePages": "4.5.1",
+          "System.Xml.XPath.XmlDocument": "4.3.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/SautinSoft.Document.dll": {
+            "assemblyVersion": "5.0.10.23",
+            "fileVersion": "5.0.10.23"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/SautinSoft.Document.dll": {}
         }
       },
       "sautinsoft.rtftohtml/7.4.5.25": {
@@ -3227,6 +3245,13 @@
       "sha512": "sha512-qbXaB76XYUVLocLBs8Z9TS/ERGK2wm797feO+0JEPFvT7o7MRadOR77mqaSD4J1k8G+DlZQyq+MlkCuxrkr3ag==",
       "path": "nuget.frameworks/4.7.0",
       "hashPath": "nuget.frameworks.4.7.0.nupkg.sha512"
+    },
+    "sautinsoft.document/5.0.10.23": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HUqRdOaCuhCjgpG7NICHVT5lgX3UvZWXMyzS14Esf91QHgfqPqC4wA9s4OgGuOHWtz5qtUvRTDQKyyu30dVNcw==",
+      "path": "sautinsoft.document/5.0.10.23",
+      "hashPath": "sautinsoft.document.5.0.10.23.nupkg.sha512"
     },
     "sautinsoft.rtftohtml/7.4.5.25": {
       "type": "package",

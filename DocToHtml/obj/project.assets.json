@@ -508,6 +508,21 @@
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
         }
       },
+      "sautinsoft.document/5.0.10.23": {
+        "type": "package",
+        "dependencies": {
+          "System.Drawing.Common": "4.6.0",
+          "System.IO.Packaging": "4.4.0",
+          "System.Text.Encoding.CodePages": "4.0.1",
+          "System.Xml.XPath.XmlDocument": "4.3.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/SautinSoft.Document.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/SautinSoft.Document.dll": {}
+        }
+      },
       "sautinsoft.rtftohtml/7.4.5.25": {
         "type": "package",
         "dependencies": {
@@ -2266,6 +2281,42 @@
         "lib/netstandard1.6/NuGet.Frameworks.xml",
         "nuget.frameworks.4.7.0.nupkg.sha512",
         "nuget.frameworks.nuspec"
+      ]
+    },
+    "sautinsoft.document/5.0.10.23": {
+      "sha512": "HUqRdOaCuhCjgpG7NICHVT5lgX3UvZWXMyzS14Esf91QHgfqPqC4wA9s4OgGuOHWtz5qtUvRTDQKyyu30dVNcw==",
+      "type": "package",
+      "path": "sautinsoft.document/5.0.10.23",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/SautinSoft.Document.XML",
+        "lib/net40/SautinSoft.Document.dll",
+        "lib/net45/SautinSoft.Document.XML",
+        "lib/net45/SautinSoft.Document.dll",
+        "lib/net461/SautinSoft.Document.XML",
+        "lib/net461/SautinSoft.Document.dll",
+        "lib/net47/SautinSoft.Document.XML",
+        "lib/net47/SautinSoft.Document.dll",
+        "lib/net48/SautinSoft.Document.XML",
+        "lib/net48/SautinSoft.Document.dll",
+        "lib/netcoreapp2.0/SautinSoft.Document.XML",
+        "lib/netcoreapp2.0/SautinSoft.Document.deps.json",
+        "lib/netcoreapp2.0/SautinSoft.Document.dll",
+        "lib/netcoreapp2.1/SautinSoft.Document.XML",
+        "lib/netcoreapp2.1/SautinSoft.Document.deps.json",
+        "lib/netcoreapp2.1/SautinSoft.Document.dll",
+        "lib/netcoreapp3.0/SautinSoft.Document.XML",
+        "lib/netcoreapp3.0/SautinSoft.Document.deps.json",
+        "lib/netcoreapp3.0/SautinSoft.Document.dll",
+        "lib/netcoreapp3.1/SautinSoft.Document.XML",
+        "lib/netcoreapp3.1/SautinSoft.Document.deps.json",
+        "lib/netcoreapp3.1/SautinSoft.Document.dll",
+        "lib/netstandard2.0/SautinSoft.Document.XML",
+        "lib/netstandard2.0/SautinSoft.Document.deps.json",
+        "lib/netstandard2.0/SautinSoft.Document.dll",
+        "sautinsoft.document.5.0.10.23.nupkg.sha512",
+        "sautinsoft.document.nuspec"
       ]
     },
     "sautinsoft.rtftohtml/7.4.5.25": {
@@ -4679,6 +4730,7 @@
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.4",
       "Swashbuckle.AspNetCore >= 5.6.3",
       "Syncfusion.DocIO.Net.Core >= 18.3.0.47",
+      "sautinsoft.document >= 5.0.10.23",
       "sautinsoft.rtftohtml >= 7.4.5.25"
     ]
   },
@@ -4737,6 +4789,10 @@
           "Syncfusion.DocIO.Net.Core": {
             "target": "Package",
             "version": "[18.3.0.47, )"
+          },
+          "sautinsoft.document": {
+            "target": "Package",
+            "version": "[5.0.10.23, )"
           },
           "sautinsoft.rtftohtml": {
             "target": "Package",

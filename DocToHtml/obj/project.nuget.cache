@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "k0tpd3zXLwB+cS5Im44jrydrX3WryVA6pyUB/amPcZkoDZdx8N3/449Km4vF6ztBQvJizfRt6z2OqKMm3Eilnw==",
+  "dgSpecHash": "AW3i3nR/HwLUEjsX7i6aHRi6iXX8yHyl6+tn35WGKT7X/x41Gl72gOeNMrT4ylAnujaNifhG6Y54P29XfsFcDA==",
   "success": true,
   "projectFilePath": "C:\\Users\\emeka\\source\\repos\\Base64ToHtml\\DocToHtml\\DocToHtml.csproj",
   "expectedPackageFiles": [
@@ -32,6 +32,7 @@
     "C:\\Users\\emeka\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\nuget.frameworks\\4.7.0\\nuget.frameworks.4.7.0.nupkg.sha512",
+    "C:\\Users\\emeka\\.nuget\\packages\\sautinsoft.document\\5.0.10.23\\sautinsoft.document.5.0.10.23.nupkg.sha512",
     "C:\\Users\\emeka\\.nuget\\packages\\sautinsoft.rtftohtml\\7.4.5.25\\sautinsoft.rtftohtml.7.4.5.25.nupkg.sha512",
     "C:\\Users\\emeka\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
     "C:\\Users\\emeka\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",

@@ -55,6 +55,10 @@
               "target": "Package",
               "version": "[18.3.0.47, )"
             },
+            "sautinsoft.document": {
+              "target": "Package",
+              "version": "[5.0.10.23, )"
+            },
             "sautinsoft.rtftohtml": {
               "target": "Package",
               "version": "[7.4.5.25, )"

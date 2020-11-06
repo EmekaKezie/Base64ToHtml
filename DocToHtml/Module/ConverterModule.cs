@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SautinSoft.Document;
 
 namespace DocToHtml.Module
 {
@@ -27,28 +28,54 @@ namespace DocToHtml.Module
                         MemoryStream stream = new MemoryStream();
                         mainDocument.SaveOptions.HtmlExportOmitXmlDeclaration = true;
                         mainDocument.SaveOptions.HtmlExportHeadersFooters = true;
-                        mainDocument.Save(stream, FormatType.Rtf);
+                        mainDocument.Save(stream, FormatType.Docx);
+                        
 
-                        stream.Position = 0;
-                        using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
+
+                        //string filePath = @"C:\Users\emeka\Desktop\docfile.docx";
+
+                        //byte[] doc = File.ReadAllBytes(mainDocument.ToString());
+                        DocumentCore dc = DocumentCore.Load(stream, LoadOptions.DocxDefault);
+                        DocumentPaginator dp = dc.GetPaginator();
+                        int pageCount = dp.Pages.Count;
+                        for (int i = 0; i < pageCount; i++)
                         {
-                            rtf = reader.ReadToEnd();
+                            DocumentPage page = dp.Pages[i];
+
                         }
 
-                        SautinSoft.RtfToHtml r = new SautinSoft.RtfToHtml();
+                        //stream.Position = 0;
+                        //using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
+                        //{
+                        //    rtf = reader.ReadToEnd();
+                        //}
+
+                        //SautinSoft.RtfToHtml r = new SautinSoft.RtfToHtml();
 
 
-                        
+
                         //string rtfString = File.ReadAllText(rtf);
 
                         // Let's store all images inside the HTML document.
-                        r.ImageStyle.IncludeImageInHtml = true;
+                        //r.ImageStyle.IncludeImageInHtml = true;
 
-                        string htmlString = r.ConvertString(rtf);
+                        //string htmlString = r.ConvertString(rtf);
 
-                        list = htmlString;
+                        //list = htmlString;
                     }
                 }
+
+               
+
+                //string filePath = @"C:\Users\emeka\Desktop\docfile.docx";
+                //DocumentCore dc = DocumentCore.Load(filePath);
+                //DocumentPaginator dp = dc.GetPaginator();
+                //int pageCount = dp.Pages.Count;
+                //for (int i = 0; i < pageCount; i++)
+                //{
+                //    DocumentPage page = dp.Pages[i];
+
+                //}
             }
             catch (Exception ex)
             {
