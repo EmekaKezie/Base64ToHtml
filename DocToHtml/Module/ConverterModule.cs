@@ -24,104 +24,149 @@ namespace DocToHtml.Module
             string items = String.Empty;
             try
             {
+                
 
-                string filePath = @"C:\Users\emeka\Desktop\docfile.docx";
+                //string filePath = @"C:\Users\emeka\Desktop\docfile.docx";
+                string filePath = @"docx\Page-0.docx";
                 string folderPath = @"docx";
                 DocumentCore dc = DocumentCore.Load(filePath);
                 DocumentPaginator dp = dc.GetPaginator();
-                int pageCount = dp.Pages.Count;
+                //int pageCount = dp.Pages.Count;
 
-                streams = new List<Stream>();
-                list = new List<string>();
-               
-                for (int i = 0; i < pageCount; i++)
-                {
-                    DocumentPage page = dp.Pages[i];
-                    MemoryStream outputStream = new MemoryStream();
-                    var html = string.Empty;
-                    page.Save(outputStream, SautinSoft.Document.SaveOptions.DocxDefault);
-                    streams.Add(outputStream);
-                }
 
-                foreach (var item in streams)
+                var html = string.Empty;
+                MemoryStream outputStream = new MemoryStream();
+                dc.Save(outputStream, SautinSoft.Document.SaveOptions.DocxDefault);
+                //streams.Add(outputStream);
+
+                Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("@31382e332e30PWw2APLjHFJqVBHCGcjP09i81aSl9kjUJ/eeyQ+uJGQ=");
+
+                using (WordDocument mainDocument = new WordDocument(outputStream, FormatType.Automatic))
                 {
-                    using (WordDocument mainDocument = new WordDocument(item, FormatType.Automatic))
+                    string _html = null;
+                    MemoryStream stream = new MemoryStream();
+
+                    //Sets the style sheet type
+                    mainDocument.SaveOptions.HtmlExportOmitXmlDeclaration = true;
+                    mainDocument.SaveOptions.HtmlExportHeadersFooters = true;
+                    mainDocument.Save(stream, FormatType.Html);
+
+                    stream.Position = 0;
+                    using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
                     {
-                        string _html = null;
-                        MemoryStream stream = new MemoryStream();
-
-                        //Sets the style sheet type
-                        mainDocument.SaveOptions.HtmlExportOmitXmlDeclaration = true;
-                        mainDocument.SaveOptions.HtmlExportHeadersFooters = true;
-                        mainDocument.Save(stream, FormatType.Html);
-
-                        stream.Position = 0;
-                        using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
-                        {
-                            _html = reader.ReadToEnd();
-                        }
-
-                        list.Add(_html);
+                        _html = reader.ReadToEnd();
                     }
+
+                    list.Add(_html);
                 }
 
-               // if (!string.IsNullOrEmpty(m.Base64))
+
+
+
+
+
+                //string filePath = @"C:\Users\emeka\Desktop\docfile.docx";
+                //string folderPath = @"docx";
+                //DocumentCore dc = DocumentCore.Load(filePath);
+                //DocumentPaginator dp = dc.GetPaginator();
+                //int pageCount = dp.Pages.Count;
+
+                //streams = new List<Stream>();
+                //list = new List<string>();
+
+                //for (int i = 0; i < pageCount; i++)
                 //{
-                    //var bytes = await Base64ToByteArray(m.Base64);
-                    //Stream _contents = new MemoryStream(bytes);
+                //    DocumentPage page = dp.Pages[i];
+                //    MemoryStream outputStream = new MemoryStream();
+                //    var html = string.Empty;
+                //    page.Save(outputStream, SautinSoft.Document.SaveOptions.DocxDefault);
 
-                    //DocumentCore dc = DocumentCore.Load(_contents, LoadOptions.DocxDefault);
-                    //DocumentPaginator dp = dc.GetPaginator();
-                    //int pageCount = dp.Pages.Count;
+                //    page.Save(folderPath + @"\Page-" + i.ToString() + ".docx", SautinSoft.Document.SaveOptions.DocxDefault);
+                //    streams.Add(outputStream);
+                //}
 
-                    //list = new List<string>();
-                    //for (int i = 0; i < pageCount; i++)
-                    //{
-                    //    DocumentPage page = dp.Pages[i];
+                //foreach (var item in streams)
+                //{
+                //    using (WordDocument mainDocument = new WordDocument(item, FormatType.Automatic))
+                //    {
+                //        string _html = null;
+                //        MemoryStream stream = new MemoryStream();
 
-                    //    list.Add(page.Content.ToString());
-                    //}
+                //        //Sets the style sheet type
+                //        mainDocument.SaveOptions.HtmlExportOmitXmlDeclaration = true;
+                //        mainDocument.SaveOptions.HtmlExportHeadersFooters = true;
+                //        mainDocument.Save(stream, FormatType.Html);
 
+                //        stream.Position = 0;
+                //        using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
+                //        {
+                //            _html = reader.ReadToEnd();
+                //        }
 
-
-                    //using (WordDocument mainDocument = new WordDocument(_contents, FormatType.Docx))
-                    //{
-                    //    //string rtf = null;
-                    //    MemoryStream stream = new MemoryStream();
-                    //    mainDocument.SaveOptions.HtmlExportOmitXmlDeclaration = true;
-                    //    mainDocument.SaveOptions.HtmlExportHeadersFooters = true;
-                    //    mainDocument.SaveOptions.OptimizeRtfFileSize = true;
-
-                    //    mainDocument.Save(stream, FormatType.Docx);
-
-
-                    //    //DocumentCore dc = DocumentCore.Load(_contents, LoadOptions.DocxDefault);
-                    //    //DocumentPaginator dp = dc.GetPaginator();
-                    //    //int pageCount = dp.Pages.Count;
-                    //    //for (int i = 0; i < pageCount; i++)
-                    //    //{
-                    //    //    DocumentPage page = dp.Pages[i];
-                    //    //}
-
-                    //    //stream.Position = 0;
-                    //    //using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
-                    //    //{
-                    //    //    rtf = reader.ReadToEnd();
-                    //    //}
-
-                    //    //SautinSoft.RtfToHtml r = new SautinSoft.RtfToHtml();
+                //        list.Add(_html);
+                //    }
+                //}
 
 
 
-                    //    //string rtfString = File.ReadAllText(rtf);
 
-                    //    // Let's store all images inside the HTML document.
-                    //    //r.ImageStyle.IncludeImageInHtml = true;
+                // if (!string.IsNullOrEmpty(m.Base64))
+                //{
+                //var bytes = await Base64ToByteArray(m.Base64);
+                //Stream _contents = new MemoryStream(bytes);
 
-                    //    //string htmlString = r.ConvertString(rtf);
+                //DocumentCore dc = DocumentCore.Load(_contents, LoadOptions.DocxDefault);
+                //DocumentPaginator dp = dc.GetPaginator();
+                //int pageCount = dp.Pages.Count;
 
-                    //    //list = htmlString;
-                    //}
+                //list = new List<string>();
+                //for (int i = 0; i < pageCount; i++)
+                //{
+                //    DocumentPage page = dp.Pages[i];
+
+                //    list.Add(page.Content.ToString());
+                //}
+
+
+
+                //using (WordDocument mainDocument = new WordDocument(_contents, FormatType.Docx))
+                //{
+                //    //string rtf = null;
+                //    MemoryStream stream = new MemoryStream();
+                //    mainDocument.SaveOptions.HtmlExportOmitXmlDeclaration = true;
+                //    mainDocument.SaveOptions.HtmlExportHeadersFooters = true;
+                //    mainDocument.SaveOptions.OptimizeRtfFileSize = true;
+
+                //    mainDocument.Save(stream, FormatType.Docx);
+
+
+                //    //DocumentCore dc = DocumentCore.Load(_contents, LoadOptions.DocxDefault);
+                //    //DocumentPaginator dp = dc.GetPaginator();
+                //    //int pageCount = dp.Pages.Count;
+                //    //for (int i = 0; i < pageCount; i++)
+                //    //{
+                //    //    DocumentPage page = dp.Pages[i];
+                //    //}
+
+                //    //stream.Position = 0;
+                //    //using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
+                //    //{
+                //    //    rtf = reader.ReadToEnd();
+                //    //}
+
+                //    //SautinSoft.RtfToHtml r = new SautinSoft.RtfToHtml();
+
+
+
+                //    //string rtfString = File.ReadAllText(rtf);
+
+                //    // Let's store all images inside the HTML document.
+                //    //r.ImageStyle.IncludeImageInHtml = true;
+
+                //    //string htmlString = r.ConvertString(rtf);
+
+                //    //list = htmlString;
+                //}
                 //}
 
 

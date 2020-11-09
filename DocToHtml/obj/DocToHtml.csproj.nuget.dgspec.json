@@ -59,6 +59,10 @@
               "target": "Package",
               "version": "[18.3.0.47, )"
             },
+            "Syncfusion.Licensing": {
+              "target": "Package",
+              "version": "[18.3.0.47, )"
+            },
             "sautinsoft.document": {
               "target": "Package",
               "version": "[5.0.10.23, )"

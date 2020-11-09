@@ -30,6 +30,8 @@ namespace DocToHtml
         {
             services.AddControllers();
 
+            
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
@@ -54,7 +56,7 @@ namespace DocToHtml
                 app.UseDeveloperExceptionPage();
             }
 
-
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("@31382e332e30PWw2APLjHFJqVBHCGcjP09i81aSl9kjUJ/eeyQ+uJGQ=");
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
