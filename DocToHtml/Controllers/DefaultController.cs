@@ -14,18 +14,35 @@ namespace DocToHtml.Controllers
     public class DefaultController : ControllerBase
     {
         [HttpPost(Name = "Converter")]
-        public IActionResult Converter([FromBody] Converter m)
+        //public IActionResult Converter([FromBody] Converter m)
+        //{
+        //    try
+        //    {
+        //        var ret = ConverterModule.Converter(m);
+        //        return Ok(new { result = ret});
+                
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw new Exception(ex.Message);
+        //    }
+          
+        //}
+
+
+        public IActionResult Converter()
         {
-            var ret = (dynamic)null;
             try
             {
-                ret = ConverterModule.Converter(m);
+                var ret = ConverterModule.Converter();
+                return Ok(new { result = ret });
+
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-            return ret;
+
         }
     }
 }

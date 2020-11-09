@@ -9,4 +9,9 @@ namespace DocToHtml.Model
     {
         public string Base64 { get; set; }
     }
+
+    public class Response
+    {
+        public string html { get; set; }
+    }
 }
